@@ -2,7 +2,6 @@ FROM node:latest
 
 MAINTAINER vikazh
 
-
 WORKDIR /var/www
 COPY . /var/www
 

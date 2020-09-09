@@ -16,9 +16,11 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname, "static"))); // підключення static файлів (css js img...)
 app.use(mainRoutes);
 
-sequalize
-	.sync()
-	.then((connectionRezult) => {
-		app.listen(PORT, () => console.log("server work"));
-	})
-	.catch((err) => console.log(err));
+app.listen(PORT, () => console.log("server work"));
+
+// sequalize
+// 	.sync()
+// 	.then((connectionRezult) => {
+// 		app.listen(PORT, () => console.log("server work"));
+// 	})
+// 	.catch((err) => console.log(err));
