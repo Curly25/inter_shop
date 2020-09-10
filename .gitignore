@@ -1,4 +1,3 @@
 /node_modules
 /package-lock.json
 /._.DS_Store
-helper/config.js
