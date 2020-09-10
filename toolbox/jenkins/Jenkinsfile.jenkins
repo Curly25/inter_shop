@@ -58,7 +58,7 @@ pipeline  {
             steps {
                 echo " ============== starting chatterbox server =================="
                 sh '''
-                docker run -d --restart=always --name inter_shop -p 80:8889 vikazh/inter_shop
+                docker run -d --restart=always --name inter_shop -p 80:8000 vikazh/inter_shop
                 '''
             }
         }
