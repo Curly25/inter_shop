@@ -1,9 +1,10 @@
 const Sequalize = require("sequelize");
+const { DATABASENAME, PASSWORD, USERNAME, HOSTNAME } = require("./config");
 
-const sequalize = new Sequalize("intershop", "root", "root", {
+const sequalize = new Sequalize(DATABASENAME, PASSWORD, USERNAME, {
 	dialect: "mysql",
-	host: "localhost",
-	port: 8000,
-})
+	// host: "10.7.101.193", // internal address 
+	host: HOSTNAME, // from internet addres
+});
 
 module.exports = sequalize;
