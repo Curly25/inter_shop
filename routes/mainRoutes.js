@@ -14,6 +14,9 @@ router.get("/components", mainController.getComponentsPage);
 router.get("/forgetpass", mainController.getForgetPassPage);
 router.get("/legal_notice", mainController.getLegalNoticePage);
 router.get("/tac", mainController.getTacPage);
+router.get("/products", mainController.getProductsPage);
+router.get("/product_summary", mainController.getProductSummaryPage);
+router.get("/product_details", mainController.getProductDetailsPage);
 
 
 module.exports = router;

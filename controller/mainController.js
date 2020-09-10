@@ -35,4 +35,14 @@ exports.getLegalNoticePage =  (req, res, next) => {
 };
 exports.getTacPage =  (req, res, next) => { 
 	res.render("pages/tac");
-};
+}; 
+exports.getProductsPage =  (req, res, next) => { 
+	res.render("pages/products");
+}; 
+exports.getProductSummaryPage =  (req, res, next) => { 
+	res.render("pages/product_summary");
+}; 
+exports.getProductDetailsPage =  (req, res, next) => { 
+	res.render("pages/product_details");
+}; 
+
