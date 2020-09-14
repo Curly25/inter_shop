@@ -1,7 +1,15 @@
 const Product = require("../models/product");
 
-exports.getHomePage = (req, res, next) => { 
-	res.render("pages/home");
+exports.getHomePage = (req, res, next) => {
+	Product.findAll()
+	.then((products) => {
+	  res.render("pages/home", {
+		 products: products,
+		 pageTitle: "All products",
+		 path: 'pages/home'
+	  });
+	})
+	.catch(err => console.log(err))
 };
 
 exports.getContactPage =  (req, res, next) => { 

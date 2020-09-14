@@ -1,7 +1,7 @@
 const express = require("express"); // підключення express
 const bodyParser = require("body-parser");
 const path = require("path");
-const PORT = 8000; // підключення порта
+const PORT = 8081; // підключення порта
 const app = express();
 
 // include Sequalize база 
