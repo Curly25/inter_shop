@@ -6,9 +6,10 @@ const errorController = require("./controller/errorController");
 const PORT = 8081; // підключення порта
 const app = express();
 
+// Include Models 
+const user = require("./models/users");
 // include Sequalize база 
 const sequalize = require("./helper/database");
-
 //routes middleware 
 const adminRoutes = require("./routes/adminRoutes");
 const mainRoutes = require("./routes/mainRoutes");
@@ -26,8 +27,22 @@ app.use(errorController.get404);
 // app.listen(PORT, () => console.log("server work"));
 
 sequalize
-	.sync()
-	.then((connectionRezult) => {
-		app.listen(PORT, () => console.log("server work"));
-	})
-	.catch((err) => console.log(err));
+  .sync()
+  .then((connectionRezult) => {
+    return User.findByPk(1);
+  })
+  .then((user) => {
+    console.log("user => ", user);
+    if (!user) {
+      return User.create({
+        name: "vika",
+        email: "vika@example.com",
+        password: "vikapass",
+      });
+    }
+    return user;
+  })
+  .then((user) => {
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch((err) => console.log(err));

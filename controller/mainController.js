@@ -1,4 +1,6 @@
+const { response } = require("express");
 const Product = require("../models/product");
+const User = require("../models/users");
 
 exports.getHomePage = (req, res, next) => {
 	Product.findAll()
