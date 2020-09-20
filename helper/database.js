@@ -1,4 +1,5 @@
 const Sequalize = require("sequelize");
+const HOST = process.env.HOSTNAME;
 const { DATABASENAME, PASSWORD, USERNAME, HOSTNAME } = require("./config");
 const sequalize = new Sequalize(DATABASENAME, PASSWORD, USERNAME, {
 	dialect: "mysql",
@@ -7,3 +8,4 @@ const sequalize = new Sequalize(DATABASENAME, PASSWORD, USERNAME, {
 });
 
 module.exports = sequalize;
+
