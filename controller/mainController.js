@@ -46,9 +46,17 @@ exports.getLegalNoticePage =  (req, res, next) => {
 exports.getTacPage =  (req, res, next) => { 
 	res.render("pages/tac");
 }; 
-exports.getProductsPage =  (req, res, next) => { 
-	res.render("pages/products");
-}; 
+exports.getProductsPage = (req, res, next) => {
+	Product.findAll()
+		 .then((products) => {
+			  res.render("pages/products", {
+					products: products,
+					pageTitle: "All products",
+					path: 'pages/products'
+			  });
+		 })
+		 .catch(err => console.log(err));
+};
 exports.getProductSummaryPage =  (req, res, next) => { 
 	res.render("pages/product_summary");
 }; 
