@@ -1,4 +1,3 @@
-const { response } = require("express");
 const Product = require("../models/product");
 const User = require("../models/users");
 
@@ -49,16 +48,8 @@ exports.getTacPage =  (req, res, next) => {
 	res.render("pages/tac");
 }; 
 exports.getProductsPage = (req, res, next) => {
-	Product.findAll()
-		 .then((products) => {
-			  res.render("pages/products", {
-					products: products,
-					pageTitle: "All products",
-					path: 'pages/products'
-			  });
-		 })
-		 .catch(err => console.log(err));
-};
+	res.render("pages/products");
+}; 
 exports.getProductSummaryPage =  (req, res, next) => { 
 	res.render("pages/product_summary");
 }; 
