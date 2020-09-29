@@ -9,7 +9,7 @@ exports.getAddProduct = (req, res, next) => {
 };
 
 exports.postAddProduct = (req, res, next) => {
-  console.log("Log => ", req.body);
+  console.log("Log => ", req.users);
   const title = req.body.title;
   const price = req.body.price;
   const sale = req.body.sale;
@@ -20,18 +20,19 @@ exports.postAddProduct = (req, res, next) => {
   const fullDescription = req.body.fullDescription;
   const brand = req.body.brand;
   const model = req.body.model;
-  Product.create({
-    title: title,
-    price: price,
-    sale: sale,
-    imageUrl: imageUrl,
-    quantity: quantity,
-    color: color,
-    shortDescription: shortDescription,
-    fullDescription: fullDescription,
-    brand: brand,
-    model: model,
-  })
+  req.users
+    .createProduct({
+      title: title,
+      price: price,
+      sale: sale,
+      imageUrl: imageUrl,
+      quantity: quantity,
+      color: color,
+      shortDescription: shortDescription,
+      fullDescription: fullDescription,
+      brand: brand,
+      model: model,
+    })
     .then((result) => {
       // console.log(result);
       console.log("Created Product");
@@ -41,7 +42,6 @@ exports.postAddProduct = (req, res, next) => {
       console.log(err);
     });
 };
-
 exports.getEditProduct = (req, res, next) => {
   const editMode = req.query.edit;
   if (!editMode) {
@@ -62,7 +62,6 @@ exports.getEditProduct = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
-
 exports.postEditProduct = (req, res, next) => {
   console.log("Log => ", req.body);
   const prodId = req.body.productId;
@@ -85,7 +84,6 @@ exports.postEditProduct = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
-
 exports.getProducts = (req, res, next) => {
   Product.findAll()
     .then((products) => {
@@ -97,7 +95,6 @@ exports.getProducts = (req, res, next) => {
     })
     .catch((err) => console.log(err));
 };
-
 exports.postDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId)

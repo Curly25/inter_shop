@@ -7,7 +7,10 @@ const PORT = 8081; // підключення порта
 const app = express();
 
 // Include Models 
+const Product = require("./models/product");
 const User = require("./models/users");
+const Cart = require("./models/cart");
+const CarItem = require("./models/cartItem");
 // include Sequalize база 
 const sequalize = require("./helper/database");
 //routes middleware 

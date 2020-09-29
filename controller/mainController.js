@@ -1,5 +1,4 @@
 const Product = require("../models/product");
-const User = require("../models/users");
 
 exports.getHomePage = (req, res, next) => {
 	Product.findAll()
@@ -10,7 +9,7 @@ exports.getHomePage = (req, res, next) => {
 		 path: 'pages/home'
 	  });
 	})
-	.catch(err => console.log(err))
+	.catch((err) => console.log(err))
 };
 
 exports.getContactPage =  (req, res, next) => { 
@@ -37,7 +36,6 @@ exports.getRegisterPage =  (req, res, next) => {
 exports.getComponentsPage =  (req, res, next) => { 
 	res.render("pages/components");
 };
-
 exports.getForgetPassPage =  (req, res, next) => { 
 	res.render("pages/forgetpass");
 };
