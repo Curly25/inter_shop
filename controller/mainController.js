@@ -1,124 +1,46 @@
-const Product = require("../models/product");
-
-// Home page
-exports.getHomePage = (req, res, next) => {
-  Product.findAll()
-    .then((products) => {
-      res.render("pages/home", {
-        products: products,
-        pageTitle: "All products",
-        path: "pages/home",
-      });
-    })
-    .catch((err) => console.log(err));
+exports.getHomePage = (req, res, next) => { 
+	res.render("pages/home");
 };
-
-// Contact page
-exports.getContactPage = (req, res, next) => {
-  res.render("pages/contacts");
+exports.getContactPage =  (req, res, next) => { 
+	res.render("pages/contact");
 };
-
-// FAQ page
-exports.getFAQPage = (req, res, next) => {
-  res.render("pages/faq");
+exports.getFaqPage =  (req, res, next) => { 
+	res.render("pages/faq");
 };
-
-exports.getProduct = (req, res, next) => {
-  const prodId = req.params.productId;
-  Product.findByPk(prodId)
-    .then((product) => {
-      res.render("pages/product-detail", {
-        product: product,
-        pageTitle: product.title,
-        path: "/products",
-      });
-    })
-    .catch((err) => console.log(err));
+exports.getDeliveryPage =  (req, res, next) => { 
+	res.render("pages/delivery");
 };
-
-exports.getCart = (req, res, next) => {
-  req.user
-    .getCart()
-    .then((cart) => {
-      return cart.getProducts().then((products) => {
-        res.render("pages/cart", {
-          path: "/cart",
-          product: products,
-        });
-      });
-    })
-    .catch((err) => console.log(err));
+exports.getSpecialOffersPage =  (req, res, next) => { 
+	res.render("pages/specialoffers");
 };
-
-exports.postCart = (req, res, next) => {
-  const productId = req.body.productId;
-  let newQuantity = 1;
-  let currentCart;
-  req.user
-    .getCart()
-    .then((cart) => {
-      currentCart = cart;
-      return cart.getProducts({ where: { id: productId } });
-    })
-    .then((products) => {
-      let product;
-      if (products.length > 0) {
-        product = products[0];
-      }
-      if (product) {
-        const oldQuantity = product.cartItem.quantity;
-        newQuantity = quantity + 1;
-        return product;
-      }
-      return Product.findByPk(productId);
-    })
-    .then((product) => {
-      console.log("postCart => product => ", product);
-      return currentCart.addProduct(product, {
-        through: { quantity: newQuantity },
-      });
-    })
-    .then(() => {
-      res.redirect("/cart");
-    })
-    .catch((err) => console.log(err));
+exports.getLoginPage =  (req, res, next) => { 
+	res.render("pages/login");
 };
-
-exports.getOrders = (req, res, next) => {
-  req.user
-    .getOrders({ include: ["products"] })
-    .then((orders) => {
-      res.render("pages/orders", {
-        path: "/orders/",
-        orders: orders,
-      });
-    })
-    .catch((err) => console.log(err));
+exports.getCompairPage =  (req, res, next) => { 
+	res.render("pages/compair");
 };
-
-exports.postOrder = (req, res, next) => {
-  let currentCart;
-  req.user
-    .getCart()
-    .then((cart) => {
-      currentCart = cart;
-      return cart.getProducts();
-    })
-    .then((products) => {
-      return req.user.createOrder().then((order) => {
-        return order.addProduct(
-          products.map((product) => {
-            product.orderItem = { quantity: product.cartItem.quantity };
-            return product;
-          })
-        );
-      });
-    })
-    .then((result) => {
-      return currentCart.setProducts(null);
-    })
-    .then((result) => {
-      res.redirect("/orders");
-    })
-    .catch((err) => console.log(err));
+exports.getRegisterPage =  (req, res, next) => { 
+	res.render("pages/register");
 };
+exports.getComponentsPage =  (req, res, next) => { 
+	res.render("pages/components");
+};
+exports.getForgetPassPage =  (req, res, next) => { 
+	res.render("pages/forgetpass");
+};
+exports.getLegalNoticePage =  (req, res, next) => { 
+	res.render("pages/legal_notice");
+};
+exports.getTacPage =  (req, res, next) => { 
+	res.render("pages/tac");
+}; 
+exports.getProductsPage =  (req, res, next) => { 
+	res.render("pages/products");
+}; 
+exports.getProductSummaryPage =  (req, res, next) => { 
+	res.render("pages/product_summary");
+}; 
+exports.getProductDetailsPage =  (req, res, next) => { 
+	res.render("pages/product_details");
+}; 
+

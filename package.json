@@ -1,7 +1,7 @@
 {
-  "name": "inter-shop",
+  "name": "bootshop",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple online market",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Curly25/inter_shop.git"
+    "url": "git+https://github.com/macnaer/bootshop.git"
   },
-  "author": "vika",
+  "author": "Trofimchuk A",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Curly25/inter_shop/issues"
+    "url": "https://github.com/macnaer/bootshop/issues"
   },
-  "homepage": "https://github.com/Curly25/inter_shop#readme",
+  "homepage": "https://github.com/macnaer/bootshop#readme",
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
