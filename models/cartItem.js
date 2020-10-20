@@ -1,5 +1,6 @@
 const Sequalize = require("sequelize");
 const sequalize = require("../helper/database");
+
 const CartItem = sequalize.define("cartItem", {
   id: {
     type: Sequalize.INTEGER,

@@ -1,30 +1,30 @@
 {
-  "name": "bootshop",
-  "version": "1.0.0",
-  "description": "Simple online market",
+	  "name": "inter-shop",
+	  "version": "1.0.0",
+	  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+	  "test": "echo \"Error: no test specified\" && exit 1",
+	   "start": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/macnaer/bootshop.git"
+	  "repository": {
+  "type": "git",
+   "url": "git+https://github.com/Curly25/inter_shop.git"
   },
-  "author": "Trofimchuk A",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/macnaer/bootshop/issues"
+	 "author": "vika",
+	  "license": "ISC",
+	  "bugs": {
+	      "url": "https://github.com/Curly25/inter_shop/issues"
   },
-  "homepage": "https://github.com/macnaer/bootshop#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  },
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^6.3.4"
-  }
-}
+  "homepage": "https://github.com/Curly25/inter_shop#readme",
+	"devDependencies": {
+	     "nodemon": "^2.0.4"
+		  },
+	  "dependencies": {
+	  	    "body-parser": "^1.19.0",
+	    "ejs": "^3.1.5",
+	      "express": "^4.17.1",
+	     "mysql2": "^2.1.0",
+	    "sequelize": "^6.3.4"
+		  }
+ 	}
