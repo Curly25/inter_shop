@@ -1,6 +1,7 @@
 FROM node:latest
 
-MAINTAINER vikazh
+MAINTAINER BootShop
+
 
 WORKDIR /var/www
 COPY . /var/www

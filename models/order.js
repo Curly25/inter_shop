@@ -1,5 +1,7 @@
 const Sequalize = require("sequelize");
+
 const sequalize = require("../helper/database");
+
 const Order = sequalize.define("order", {
     id: {
         type: Sequalize.INTEGER,
@@ -8,4 +10,5 @@ const Order = sequalize.define("order", {
         primaryKey: true,
     },
 });
+
 module.exports = Order;
