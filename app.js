@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, "static")));
 app.use(['/admin/products_edit/', '/product_details/:id', '/admin/'], express.static(path.join(__dirname, 'static')));
 
 app.use((req, res, next) => {
-  User.findByPk(2)
+  User.findByPk(1)
     .then((user) => {
       req.user = user;
     }).then(result => {
@@ -70,15 +70,15 @@ User.hasMany(Order);
 Order.belongsToMany(Product, { through: OrderItem });
 
 sequalize
-  .sync({force: true})
+  .sync()
   .then(connectionRezult => {
-    Product.findByPk(2).then(product => {
+    Product.findByPk(1).then(product => {
       if (!product) {
         seedProducts.createProducts();
       }
       return product;
     }).catch(err => console.log(err));
-    User.findByPk(2).then(user => {
+    User.findByPk(1).then(user => {
       if (!user) {
         return User.create({
           name: 'vika',
