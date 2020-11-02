@@ -1,30 +1,39 @@
 {
-	  "name": "inter-shop",
-	  "version": "1.0.0",
-	  "description": "",
-  "main": "app.js",
-  "scripts": {
-	  "test": "echo \"Error: no test specified\" && exit 1",
-	   "start": "nodemon app.js"
-  },
-	  "repository": {
-  "type": "git",
-   "url": "git+https://github.com/Curly25/inter_shop.git"
-  },
-	 "author": "vika",
-	  "license": "ISC",
-	  "bugs": {
-	      "url": "https://github.com/Curly25/inter_shop/issues"
-  },
-  "homepage": "https://github.com/Curly25/inter_shop#readme",
+	"name": "inter-shop",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "nodemon app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Curly25/inter_shop.git"
+	},
+	"author": "vika",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Curly25/inter_shop/issues"
+	},
+	"homepage": "https://github.com/Curly25/inter_shop#readme",
 	"devDependencies": {
-	     "nodemon": "^2.0.4"
-		  },
-	  "dependencies": {
-	  	    "body-parser": "^1.19.0",
-	    "ejs": "^3.1.5",
-	      "express": "^4.17.1",
-	     "mysql2": "^2.1.0",
-	    "sequelize": "^6.3.4"
-		  }
- 	}
+		"nodemon": "^2.0.4"
+	},
+	"dependencies": {
+		"@hapi/joi": "^17.1.1",
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.19.0",
+		"connect-flash": "^0.1.1",
+		"connect-mongodb-session": "^2.4.1",
+		"csurf": "^1.11.0",
+		"ejs": "^3.1.3",
+		"express": "^4.17.1",
+		"express-session": "^1.17.1",
+		"mongodb": "^3.6.2",
+		"mongoose": "^5.10.9",
+		"mysql2": "^2.1.0",
+		"nodemailer": "^6.4.14",
+		"sequelize": "^6.3.4"
+	}
+}

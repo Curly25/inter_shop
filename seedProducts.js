@@ -1,21 +1,22 @@
 const Product = require('./models/product');
 exports.createProducts = () => {
-    return Product.bulkCreate([{
+    return Product.insertMany([{
         title: 'Ноутбук Acer Aspire 5 A515-54G-502N',
         price: 16999,    
         sale: 15999,
         imageUrl: 'https://i8.rozetka.ua/goods/18137139/copy_acer_nx_hn5eu_00j_5eb3cfb04a2ec_images_18137139763.jpg',
         quantity: 10,
-        color: 'black',
+        color: 'metalic',
         shortDescription: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / Intel Core i5-10210U (1.6 — 4.2 ГГц) / RAM 8 ГБ / SSD 512 ГБ / nVidia GeForce MX350, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / вебкамера / без ОС / 1.8 кг / сріблястий',
         fullDescription: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / Intel Core i5-10210U (1.6 — 4.2 ГГц) / RAM 8 ГБ / SSD 512 ГБ / nVidia GeForce MX350, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / вебкамера / без ОС / 1.8 кг / сріблястий, Екран 15.6" IPS (1920x1080) Full HD, матовий / Intel Core i5-10210U (1.6 — 4.2 ГГц) / RAM 8 ГБ / SSD 512 ГБ / nVidia GeForce MX350, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / вебкамера / без ОС / 1.8 кг / сріблястий',
         brand: 'Acer',
         model: 'Aspire',
         released: '2020-09-09 00:00:00',
-        dimensions: '969 х 612 х 193 мм',
+        dimensions: '969 х 612 aх 193 мм',
         displaySize: 15.6,
         features: 'Екран 15.6" IPS (1920x1080) Full HD, матовий / Intel Core i5-10210U (1.6 — 4.2 ГГц) / RAM 8 ГБ / SSD 512 ГБ / nVidia GeForce MX350, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / вебкамера / без ОС / 1.8 кг / сріблястий',
-    },
+		  userId: '5f8f6140e0762b10e49fec40'
+	 },
     {
         title: 'Ноутбук Asus',
         price: 30000,
@@ -31,7 +32,8 @@ exports.createProducts = () => {
         dimensions: '912x594x230 мм',
         displaySize: 15.6,
         features: '  Краще зображення LED дисплея Матриця класу А+ від провідних світових виробників',
-    },
+		  userId: '5f8f6140e0762b10e49fec40'
+	 },
     {
         title: 'Ноутбук HP Pavilion Gaming 15-dk0001',
         price: 15000,
@@ -47,7 +49,8 @@ exports.createProducts = () => {
         dimensions: '3840x2160 мм',
         displaySize: 15.6,
         features: '  Краще зображення LED дисплея Матриця класу А+ від провідних світових виробників',
-    },
+		  userId: '5f8f6140e0762b10e49fec40'
+		 },
     {
         title: 'Ноутбук Lenovo V15-IIL',
         price: 17000,
@@ -63,5 +66,6 @@ exports.createProducts = () => {
         dimensions: '969 х 612 х 193 мм мм',
         displaySize: 15.6,
         features: 'Роздільна здатність Full HD удвічі перевищує роздільну здатність зображення HD-телевізорів.',
-    }]);
+		  userId: '5f8f6140e0762b10e49fec40'
+		 }]);
 };
